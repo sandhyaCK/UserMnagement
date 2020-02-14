@@ -18,7 +18,7 @@ import java.sql.PreparedStatement;
 
 public class LoginRegRepository {
 	
-	 @WebServlet("/LoginPage"
+	 @WebServlet("/LoginPage")
 	 public class LoginPage extends HttpServlet {
 	 	private static final long serialVersionUID = 1L;
 
