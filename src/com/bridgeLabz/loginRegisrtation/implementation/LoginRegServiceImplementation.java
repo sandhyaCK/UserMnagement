@@ -1,6 +1,14 @@
 package com.bridgeLabz.loginRegisrtation.implementation;
 
-public class Login {
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.bridgeLabz.loginRegisrtation.model.DataBaseCon;
+import com.bridgeLabz.loginRegisrtation.service.LoginService;
+
+public class LoginRegServiceImplementation {
 	public class LoginImplementation implements LoginService {
 		ResultSet rs = null;
 		Connection con = null;
@@ -27,7 +35,7 @@ public class Login {
 		public String register(LoginModel register) throws SQLException, ClassNotFoundException {
 
 			String s1 = "select * from Register";
-			DataBaseConfigure db = new DataBaseConfigure();
+			DataBaseCon db = new DataBaseCon();
 			st = db.DataBaseConfigure().prepareStatement(s1);
 
 			ResultSet rs1=st.executeQuery();

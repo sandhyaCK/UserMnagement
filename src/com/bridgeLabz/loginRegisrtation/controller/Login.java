@@ -32,41 +32,5 @@ public class Login {
 			return status;
 		}
 
-		public String register(LoginModel register) throws SQLException, ClassNotFoundException {
-
-			String s1 = "select * from Register";
-			DataBaseConfigure db = new DataBaseConfigure();
-			st = db.DataBaseConfigure().prepareStatement(s1);
-
-			ResultSet rs1=st.executeQuery();
-
-			while (rs1.next()) {
-				if (register.getUname().equals(rs1.getString(9)))
-					status = "existed";
-				break;
-
-			}
-
-			if (!status.equals("existed")) {
-
-				String insertQuery = "INSERT into Register values(?,?,?,?,?,?,?,?,?,?)";
-				st = db.DataBaseConfigure().prepareStatement(insertQuery);
-				st.setString(1, register.getfName());
-				st.setString(2, register.getfName());
-				st.setString(3, register.getEmail());
-				st.setString(4, register.getPhoneno());
-				st.setString(5, register.getCity());
-				st.setString(6, register.getState());
-				st.setString(7, register.getCountry());
-				st.setString(8, register.getPin());
-				st.setString(9, register.getUname());
-				st.setString(10, register.getPassword());
-
-				st.executeUpdate();
-
-				status = "success";
-
-			}
-			return status;
-		}
+		
 }
