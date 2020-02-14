@@ -35,7 +35,7 @@ public class LoginRegRepository {
 	 			String Gender= request.getParameter("Male");
 	 			String Mobile_No= request.getParameter("Number");*/
 	 		PreparedStatement st = con.prepareStatement("select * from LoginReg WHERE UserName=?");
-	 		String UserName = request.getParameter("Name");
+	 		String  = request.getParameter("Name");
 			//String Password = request.getParameter("password");
 			st.setString(1,UserName);
 			//st.setString(2,Password );
